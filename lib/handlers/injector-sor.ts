@@ -44,7 +44,7 @@ import { AWSTokenListProvider } from './router-entities/aws-token-list-provider'
 import { DynamoRouteCachingProvider } from './router-entities/route-caching/dynamo-route-caching-provider'
 
 export const SUPPORTED_CHAINS: ChainId[] = [ChainId.MODE]
-const DEFAULT_TOKEN_LIST = 'https://raw.githubusercontent.com/pegasys-fi/default-token-list/main/build/pegasys-default.tokenlist.json'
+const DEFAULT_TOKEN_LIST = 'https://tokenlist-api.vercel.app/v3-tokens'
 
 export interface RequestInjected<Router> extends BaseRInj {
   chainId: ChainId
@@ -102,7 +102,7 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
 
     const dependenciesByChainArray = await Promise.all(
       _.map(SUPPORTED_CHAINS, async (chainId: ChainId) => {
-        const url = process.env[`WEB3_RPC_${chainId.toString()}`]!
+        const url = 'https://sepolia.mode.network'
 
         if (!url) {
           log.fatal({ chainId: chainId }, `Fatal: No Web3 RPC endpoint set for chain`)

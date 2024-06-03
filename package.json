@@ -71,7 +71,7 @@
     "udonswap-default-token-list": "1.0.0",
     "routersdk18": "0.0.1",
     "sdkcore18": "0.0.1",
-    "smartorderrouter18": "0.0.1",
+    "smartorderrouter18": "0.0.2",
     "universalroutersdk18": "0.0.1",
     "@uniswap/v3-periphery": "^1.4.4",
     "v3sdk18": "0.0.1",

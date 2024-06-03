@@ -65,7 +65,7 @@ export class RoutingLambdaStack extends cdk.NestedStack {
 
     this.routingLambda = new aws_lambda_nodejs.NodejsFunction(this, 'RoutingLambda2', {
       role: lambdaRole,
-      runtime: aws_lambda.Runtime.NODEJS_14_X,
+      runtime: aws_lambda.Runtime.NODEJS_20_X,
       entry: path.join(__dirname, '../../lib/handlers/index.ts'),
       handler: 'quoteHandler',
       timeout: cdk.Duration.seconds(29),
@@ -101,7 +101,7 @@ export class RoutingLambdaStack extends cdk.NestedStack {
 
     this.routeToRatioLambda = new aws_lambda_nodejs.NodejsFunction(this, 'RouteToRatioLambda2', {
       role: lambdaRole,
-      runtime: aws_lambda.Runtime.NODEJS_14_X,
+      runtime: aws_lambda.Runtime.NODEJS_20_X,
       entry: path.join(__dirname, '../../lib/handlers/index.ts'),
       handler: 'quoteToRatioHandler',
       timeout: cdk.Duration.seconds(29),
