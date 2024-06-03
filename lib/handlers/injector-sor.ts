@@ -255,6 +255,9 @@ export abstract class InjectorSOR<Router, QueryParams> extends Injector<
                 POOL_CACHE_KEY!,
                 chainId
               )
+              console.log('subgraph provider, bucket, key and chainid: ', {subgraphProvider,POOL_CACHE_BUCKET_2,
+                POOL_CACHE_KEY,
+                chainId})
               return subgraphProvider
             } catch (err) {
               log.error({ err }, 'AWS Subgraph Provider unavailable, defaulting to Static Subgraph Provider')

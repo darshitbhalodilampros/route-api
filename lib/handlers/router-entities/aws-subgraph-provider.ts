@@ -52,10 +52,11 @@ export const cachePoolsFromS3 = async <TSubgraphPool>(
   protocol: Protocol
 ) => {
   const key = S3_POOL_CACHE_KEY(baseKey, chainId, protocol)
-
+  console.log('bucket and key: ', { bucket, key })
   let result
   try {
     result = await s3.getObject({ Key: key, Bucket: bucket }).promise()
+    console.log('result: ', result)
   } catch (err) {
     log.error({ bucket, key, err }, `Failed to get pools from S3 for ${protocol} on chain ${chainId}`)
     throw new Error(`Failed to get pools from S3 for ${protocol} on chain ${chainId}`)
